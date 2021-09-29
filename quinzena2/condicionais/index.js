@@ -91,142 +91,94 @@
     // }
 
 // 2. 
-    const nomeDoComprador = prompt("Digite seu nome completo:")
-    const tipoDeJogo = prompt("Qual o tipo do jogo? IN indica internacional e DO indica doméstico.")
-    const etapaDoJogo = prompt("Qual a etapa do jogo? SF indica semi-final, DT indica decisão de terceiro lugar e FI indica final.")
-    const categoria = Number(prompt("Digite a categoria: 1, 2, 3 ou 4."))
-    const quantidade = Number(prompt("Digite aquantidade de ingresso que deseja comprar:"))
+const nomeDoComprador = prompt("Digite seu nome completo:")
+const tipoDeJogo = prompt("Qual o tipo do jogo? IN indica internacional e DO indica doméstico.")
+const etapaDoJogo = prompt("Qual a etapa do jogo? SF indica semi-final, DT indica decisão de terceiro lugar e FI indica final.")
+const categoria = Number(prompt("Digite a categoria: 1, 2, 3 ou 4."))
+const quantidade = Number(prompt("Digite aquantidade de ingresso que deseja comprar:"))
 
-    let valorFinal = []
+let valorFinal = []
 
-    console.log("---Dados da compra---")
-    console.log("Nome do cliente:", nomeDoComprador)
+console.log("---Dados da compra---")
+console.log("Nome do cliente:", nomeDoComprador)
+
+if(tipoDeJogo.toLowerCase() === "do"){
+      console.log("Tipo do jogo:  Nacional")
+      } else{
+      console.log("Tipo do jogo:  Internacional")
+}
+if(tipoDeJogo.toLowerCase() === "do" || tipoDeJogo.toLowerCase() === "in") { 
     
-    if(tipoDeJogo === "DO") { 
-        console.log("Tipo de jogo: Doméstico") 
-        if(categoria === 1){
-            if (etapaDoJogo === "SF") {
+    if(categoria === 1){
+        if (etapaDoJogo === "SF") {
+        console.log("Etapa do jogo: Semifinais")
+        console.log("Categoria:", categoria)
+        valorFinal.push(1320)
+        } else if(etapaDoJogo === "DT") {
+            console.log("Etapa do jogo: Decisão do 3º lugar")
+            console.log("Categoria:", categoria)
+            valorFinal.push(660)
+        } else if(etapaDoJogo === "FI"){
+            console.log("Etapa do jogo: Final")
+            console.log("Categoria:", categoria)
+            valorFinal.push(1980)
+        }
+    } else if(categoria === 2){
+        if (etapaDoJogo === "SF") {
             console.log("Etapa do jogo: Semifinais")
             console.log("Categoria:", categoria)
-            valorFinal.push("R$ " + 1320)
+            valorFinal.push(880)
             } else if(etapaDoJogo === "DT") {
                 console.log("Etapa do jogo: Decisão do 3º lugar")
                 console.log("Categoria:", categoria)
-                valorFinal.push("R$ " + 660)
+                valorFinal.push(440)
             } else if(etapaDoJogo === "FI"){
                 console.log("Etapa do jogo: Final")
                 console.log("Categoria:", categoria)
-                valorFinal.push("R$ " + 1980)
+                valorFinal.push(1320)
             }
-        } else if(categoria === 2){
-            if (etapaDoJogo === "SF") {
-                console.log("Etapa do jogo: Semifinais")
+    } else if(categoria === 3){
+        if (etapaDoJogo === "SF") {
+            console.log("Etapa do jogo: Semifinais")
+            console.log("Categoria:", categoria)
+            valorFinal.push(540)
+            } else if(etapaDoJogo === "DT") {
+                console.log("Etapa do jogo: Decisão do 3º lugar")
                 console.log("Categoria:", categoria)
-                valorFinal.push("R$ " + 880)
-                } else if(etapaDoJogo === "DT") {
-                    console.log("Etapa do jogo: Decisão do 3º lugar")
-                    console.log("Categoria:", categoria)
-                    valorFinal.push("R$ " + 440)
-                } else if(etapaDoJogo === "FI"){
-                    console.log("Etapa do jogo: Final")
-                    console.log("Categoria:", categoria)
-                    valorFinal.push("R$ " + 1320)
-                }
-        } else if(categoria === 3){
-            if (etapaDoJogo === "SF") {
-                console.log("Etapa do jogo: Semifinais")
+                valorFinal.push(330)
+            } else if(etapaDoJogo === "FI"){
+                console.log("Etapa do jogo: Final")
                 console.log("Categoria:", categoria)
-                valorFinal.push("R$ " + 540)
-                } else if(etapaDoJogo === "DT") {
-                    console.log("Etapa do jogo: Decisão do 3º lugar")
-                    console.log("Categoria:", categoria)
-                    valorFinal.push("R$ " + 330)
-                } else if(etapaDoJogo === "FI"){
-                    console.log("Etapa do jogo: Final")
-                    console.log("Categoria:", categoria)
-                    valorFinal.push("R$ " + 880)
-                }
-        } else if (categoria === 4){
-            if (etapaDoJogo === "SF") {
-                console.log("Etapa do jogo: Semifinais")
-                console.log("Categoria:", categoria)
-                valorFinal.push("R$ " + 220)
-                } else if(etapaDoJogo === "DT") {
-                    console.log("Etapa do jogo: Decisão do 3º lugar")
-                    console.log("Categoria:", categoria)
-                    valorFinal.push("R$ " + 170)
-                } else if(etapaDoJogo === "FI"){
-                    console.log("Etapa do jogo: Final")
-                    console.log("Categoria:", categoria)
-                    valorFinal.push("R$ " + 330)
-                }
-        } 
-    }else if(tipoDeJogo === "IN"){
-            jogoTipo = "Tipo de jogo: Internacional"
-            if(categoria === 1){
-                if (etapaDoJogo === "SF") {
-                console.log("Etapa do jogo: Semifinais")
-                console.log("Categoria:", categoria)
-                valorFinal.push("U$ " + 1320 * 4.10)
-                } else if(etapaDoJogo === "DT") {
-                    console.log("Etapa do jogo: Decisão do 3º lugar")
-                    console.log("Categoria:", categoria)
-                    valorFinal.push("U$ " + 660 * 4.10)
-                } else if(etapaDoJogo === "FI"){
-                    console.log("Etapa do jogo: Final")
-                    console.log("Categoria:", categoria)
-                    valorFinal.push("U$ " + 1980 * 4.10)
-                }
-            } else if(categoria === 2){
-                if (etapaDoJogo === "SF") {
-                    console.log("Etapa do jogo: Semifinais")
-                    console.log("Categoria:", categoria)
-                    valorFinal.push("U$ " + 880 * 4.10)
-                    } else if(etapaDoJogo === "DT") {
-                        console.log("Etapa do jogo: Decisão do 3º lugar")
-                        console.log("Categoria:", categoria)
-                        valorFinal.push("U$ " + 440 * 4.10)
-                    } else if(etapaDoJogo === "FI"){
-                        console.log("Etapa do jogo: Final")
-                        console.log("Categoria:", categoria)
-                        valorFinal.push("U$ " + 1320 * 4.10)
-                    }
-            } else if(categoria === 3){
-                if (etapaDoJogo === "SF") {
-                    console.log("Etapa do jogo: Semifinais")
-                    console.log("Categoria:", categoria)
-                    valorFinal.push("U$ " + 540 * 4.10)
-                    } else if(etapaDoJogo === "DT") {
-                        console.log("Etapa do jogo: Decisão do 3º lugar")
-                        console.log("Categoria:", categoria)
-                        valorFinal.push("U$ " + 330 * 4.10)
-                    } else if(etapaDoJogo === "FI"){
-                        console.log("Etapa do jogo: Final")
-                        console.log("Categoria:", categoria)
-                        valorFinal.push("U$ " + 880 * 4.10)
-                    }
-            } else if (categoria === 4){
-                if (etapaDoJogo === "SF") {
-                    console.log("Etapa do jogo: Semifinais")
-                    console.log("Categoria:", categoria)
-                    valorFinal.push("U$ " + 220 * 4.10)
-                    } else if(etapaDoJogo === "DT") {
-                        console.log("Etapa do jogo: Decisão do 3º lugar")
-                        console.log("Categoria:", categoria)
-                        valorFinal.push("U$ " + 170 * 4.10)
-                    } else if(etapaDoJogo === "FI"){
-                        console.log("Etapa do jogo: Final")
-                        console.log("Categoria:", categoria)
-                        valorFinal.push("U$ " + 330 * 4.10)
-                    }
+                valorFinal.push(880)
             }
-    }
-    if(quantidade > 1){
-        console.log(`Quantidade de Ingressos: ${quantidade} ingressos`)     
-    } else{
-        console.log(`Quantidade de Ingressos: ${quantidade} ingresso`)
-    }
-    console.log("---Valores---")
-    console.log("Valor Do Ingressos: " + valorFinal[0])
-    console.log("Valor total: " + valorFinal[0] * quantidade)
+    } else if (categoria === 4){
+        if (etapaDoJogo === "SF") {
+            console.log("Etapa do jogo: Semifinais")
+            console.log("Categoria:", categoria)
+            valorFinal.push(220)
+            } else if(etapaDoJogo === "DT") {
+                console.log("Etapa do jogo: Decisão do 3º lugar")
+                console.log("Categoria:", categoria)
+                valorFinal.push(170)
+            } else if(etapaDoJogo === "FI"){
+                console.log("Etapa do jogo: Final")
+                console.log("Categoria:", categoria)
+                valorFinal.push(330)
+            }
+    } 
+}
 
+if(quantidade > 1){
+    console.log(`Quantidade de Ingressos: ${quantidade} ingressos`)     
+} else{
+    console.log(`Quantidade de Ingressos: ${quantidade} ingresso`)
+}
+
+console.log("---Valores---")
+if (tipoDeJogo.toLowerCase() === "do"){
+  console.log("Valor Do Ingressos: R$ " + valorFinal)
+  console.log("Valor total: R$ " + valorFinal * quantidade)
+} else if(tipoDeJogo.toLowerCase() === "in"){
+  console.log("Valor Do Ingressos: U$ " + valorFinal * 4.10)
+  console.log("Valor total: U$ " + (valorFinal * 4.10) * quantidade)
+}
