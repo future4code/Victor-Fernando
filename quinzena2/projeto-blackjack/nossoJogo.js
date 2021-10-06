@@ -10,27 +10,30 @@
  * 
  * 
  */
-// console.log("Boas vindas ao jogo de Blackjack!")
+projeto-blackjack
+console.log("Boas vindas ao jogo de Blackjack!")
 
-// if(confirm("Quer iniciar uma nova rodada?")){
-//    const carta1User = comprarCarta()
-//    const carta2User = comprarCarta()
-//    const pontuacaoUser = carta1User.valor + carta2User.valor
-//    console.log(`Usuário - cartas: ${carta1User.texto} ${carta2User.texto} - ${pontuacaoUser}`)
+if(confirm("Quer iniciar uma nova rodada?")){
+   const carta1User = comprarCarta()
+   const carta2User = comprarCarta()
+   const pontuacaoUser = carta1User.valor + carta2User.valor
+   console.log(`Usuário - cartas: ${carta1User.texto} ${carta2User.texto} - ${pontuacaoUser}`)
 
-//    const carta1Comp = comprarCarta()
-//    const carta2Comp = comprarCarta()
-//    const pontuacaoComp = carta1Comp.valor + carta2Comp.valor
-//    console.log(`Computador - cartas: ${carta1Comp.texto} ${carta2Comp.texto} - ${pontuacaoComp}`)
+   const carta1Comp = comprarCarta()
+   const carta2Comp = comprarCarta()
+   const pontuacaoComp = carta1Comp.valor + carta2Comp.valor
+   console.log(`Computador - cartas: ${carta1Comp.texto} ${carta2Comp.texto} - ${pontuacaoComp}`)
 
-//    if (pontuacaoUser > pontuacaoComp){
-//       console.log("O usuário ganhou!")
-//    } else if(pontuacaoUser < pontuacaoComp){
-//       console.log("O computador ganhou!")
-//    } else{
-//       console.log("Empate!")
-//    }
+   if (pontuacaoUser > pontuacaoComp){
+      console.log("O usuário ganhou!")
+   } else if(pontuacaoUser < pontuacaoComp){
+      console.log("O computador ganhou!")
+   } else{
+      console.log("Empate!")
+   }
 
-// } else{
-//    console.log("O jogo acabou")
-// }
+} else{
+   console.log("O jogo acabou")
+}
+
+master
