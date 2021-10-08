@@ -112,7 +112,41 @@ function comparaDoisNumeros(num1, num2) {
 
 // EXERCÍCIO 10
 function segundoMaiorEMenor(array) {
+  let parametroA = array[0]
+  let parametroB = array[0]
+  let segundoMaiorMenor = []
 
+  if(array.length > 2){
+    const maiorMenor = array.map((item) => {
+    if(item > parametroA){
+      parametroA = item
+    }
+    if(item < parametroB){
+      parametroB = item
+    }
+  })
+
+  const separador = array.filter((item) => {
+    return item < parametroA && item > parametroB
+  })
+
+  let segundoMaior = 0
+  let segundoMenor = Math.max(... separador)
+
+  const segundo = separador.map((item) => {
+    
+    if(item > segundoMaior){
+      segundoMaior = item
+    }
+    if(item < segundoMenor){
+      segundoMenor = item
+    }
+  })
+  segundoMaiorMenor.push(segundoMaior, segundoMenor)
+}else{
+  segundoMaiorMenor = array
+}
+  return segundoMaiorMenor
 }
 
 // EXERCÍCIO 11
