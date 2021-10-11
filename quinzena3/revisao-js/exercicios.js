@@ -202,7 +202,7 @@ function imprimeChamada() {
 
 // EXERCÍCIO 14
 function criaRetangulo(lado1, lado2) {
-  
+
   let perimetroDoRetangulo = 2 * (lado1 + lado2)
   let areaDoRetangulo = lado1 * lado2
   const retangulo = {
@@ -216,17 +216,27 @@ function criaRetangulo(lado1, lado2) {
 
 // EXERCÍCIO 15
 function anonimizaPessoa(pessoa) {
-
+  const anonimo = {
+    ...pessoa,
+    nome: "ANÔNIMO"
+  }
+  return anonimo
 }
 
 // EXERCÍCIO 16A
 function maioresDe18(arrayDePessoas) {
-
+  const adulto = arrayDePessoas.filter((item) => {
+    return item.idade >= 18
+  })
+  return adulto
 }
 
 // EXERCÍCIO 16B
 function menoresDe18(arrayDePessoas) {
-
+ const criançaEAdolescente = arrayDePessoas.filter((item) => {
+   return item.idade < 18
+ })
+ return criançaEAdolescente
 }
 
 // EXERCÍCIO 17A
