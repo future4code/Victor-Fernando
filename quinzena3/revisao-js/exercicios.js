@@ -202,7 +202,16 @@ function imprimeChamada() {
 
 // EXERCÍCIO 14
 function criaRetangulo(lado1, lado2) {
-
+  
+  let perimetroDoRetangulo = 2 * (lado1 + lado2)
+  let areaDoRetangulo = lado1 * lado2
+  const retangulo = {
+    largura: lado1,
+    altura: lado2,
+    perimetro: perimetroDoRetangulo,
+    area: areaDoRetangulo
+  }
+  return retangulo
 }
 
 // EXERCÍCIO 15
