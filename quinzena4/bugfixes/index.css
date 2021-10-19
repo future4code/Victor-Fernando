@@ -76,6 +76,7 @@ div img {
 }
 #container-de-descricao>p {
     margin-top: 80px;
+    max-width: 190px;
 }
 
 #container-de-descricao>ol {
