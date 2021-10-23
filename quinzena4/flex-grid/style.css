@@ -69,8 +69,8 @@ footer>img {
 }
 
 .bolo-de-chocolate {
-    height: 270px;
-    width: 220px;
+    height: 300px;
+    width: 250px;
     display: grid;
     grid-template-rows: 190px 1fr;
 }
@@ -81,12 +81,7 @@ footer>img {
 }
 
 .texto-produtos{
-    display: flex;
-    flex-direction: column;
-    grid-template-rows: 1fr 1fr;
+    display: grid;
+    justify-content: center;
     align-items: center;
-}
-.descricao{
-    padding-left: 2px;
-    max-width: 208px;
 }
