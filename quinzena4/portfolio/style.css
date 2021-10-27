@@ -1,0 +1,93 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.cor-de-fundo {
+  background-image: linear-gradient(to bottom, rgb(247, 41, 41), rgb(61, 17, 17));
+}
+
+#cabecalho{
+ height: 40px;
+ display: flex;
+}
+
+.cabecalho-foto{
+  height: 100%;
+  width: 60px;
+  background-color: black;
+}
+.cabecalho-texto {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a{
+  
+  text-decoration: none;
+  background-color: black;
+  color: beige;
+  margin-left: 20px;
+}
+a:hover{
+  background-color: beige;
+  color: #000;
+}
+
+.corpo {
+  height: 100vh;
+}
+
+.home {
+  height: 100vh;
+  display: grid;
+  grid-auto-rows: 1fr 40px;
+  color: rgb(0, 0, 0);
+}
+
+.texto {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+img{
+  height: 20px;
+}
+
+.projetos {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+}
+
+.galeria {
+  height: 110px;
+  width: 70px;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid gainsboro;
+}
+
+.galeria:hover {
+  background-color: rgb(61, 17, 17);
+}
+
+#centro {
+  padding: 100px 50px;
+}
+
+.img-projeto {
+  height: 100%;
+  width: 100%;
+}
+
+.roda-pe {
+  display: flex;
+  flex-direction: row;
+}
+
