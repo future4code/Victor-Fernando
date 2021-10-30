@@ -1,0 +1,77 @@
+body{
+    background-color: rgb(35, 54, 226);
+}
+p, h2, h1 {
+    text-align: center;
+    color: #fff;
+}
+.frase-da-empresa{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+table{
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    position: relative;
+    left: 37%;
+}
+
+td {
+    padding: 10px ;
+    text-align: center;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+th{
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    color: #fff;
+}
+
+.nome-loja {
+    text-align: center;
+    font-weight: bold;
+    font-size: 27px;
+    color: rgb(255, 255, 255);
+}
+
+img {
+    width: 70px;
+}
+
+.estoque-titulo{
+    padding-left: 170px;
+    padding-top: 20px;
+}
+
+.menu{
+    text-decoration: none;
+    padding-top: 40px;
+    color: rgb(255, 255, 255);
+}
+.menu-inteiro{
+    padding-top: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.menu:hover{
+    color: black;
+}
+
+.redes-sociais{
+    position: fixed;
+    bottom: 70px;
+    right: 30px;
+}
+.redes {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
