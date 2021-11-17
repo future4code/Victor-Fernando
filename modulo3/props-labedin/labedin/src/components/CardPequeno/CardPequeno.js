@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const Centraliza = styled.div`
     height: 60px;
-    width: 40vw;
     border: 1px solid black;
     display: flex;
     margin: 5px 0px;
