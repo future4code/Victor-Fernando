@@ -1,4 +1,4 @@
-* {
+/* * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -11,7 +11,7 @@
   margin-top: 30px;
 }
 
-.page-section-container {
+ .page-section-container {
   width: 40vw;
   margin: 10px 0;
 }
@@ -25,4 +25,4 @@ h2 {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-}
+} */
