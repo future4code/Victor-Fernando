@@ -13,21 +13,9 @@ class App extends React.Component {
   render() {
     return (
       <MainContainer>
-        <Post
-          nomeUsuario={'paulinha'}
-          fotoUsuario={'https://picsum.photos/50/50'}
-          fotoPost={'https://picsum.photos/200/150'}
-        />
-        <Post
-          nomeUsuario={'phelipe'}
-          fotoUsuario={'https://picsum.photos/50/50?p/1'}
-          fotoPost={'https://picsum.photos/200/150?p/2'}
-        />
-        <Post
-          nomeUsuario={'pedro'}
-          fotoUsuario={'https://picsum.photos/50/50?p/3'}
-          fotoPost={'https://picsum.photos/200/150?p/4'}
-        />
+
+        <Post/>
+        
       </MainContainer>
     );
   }
