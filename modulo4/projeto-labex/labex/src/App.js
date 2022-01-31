@@ -1,12 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
 import React from 'react';
-import { Route } from './route/Router'
+import { Router } from './route/Router'
+import { ThemeProvider } from '@mui/material/styles';
+import theme from './route/Thame'
 
 export function App(props) {
   return (
-    <div className="App">
-      <Router />
+    <div>
+      <ThemeProvider theme={theme}>
+        <Router /> 
+      </ThemeProvider>
     </div>
   );
 }
