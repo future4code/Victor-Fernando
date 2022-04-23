@@ -35,12 +35,11 @@ app.get("/actor", async (req: Request, res: Response): Promise<void> =>{
 app.get("/buscar", async (req: Request, res: Response): Promise<void> =>{
     try { 
 
-        const result = await connection("Actor")
-        .where({
-            name: req.body.nome
-        })
+        const result = await connection.raw(`
+            SELECT * FROM Actor WHERE gender = ${req.body.nome}
+        `);
 
-        res.status(200).send(result);
+        res.status(200).send(result[0]);
     } catch (error : any) {
         res.status(500).send(error.sqlMessage || error.massage);
     }
@@ -48,12 +47,13 @@ app.get("/buscar", async (req: Request, res: Response): Promise<void> =>{
 
 
 app.get("/buscar/gender", async (req: Request, res: Response): Promise<void> =>{
-    try { 
+    try {  
 
-        const result = await connection("Actor")
-       
-
-        res.status(200).send(result);
+        const result = await connection.raw(`
+            SELECT COUNT(*) as count FROM Actor WHERE gender = "${req.body.gender}"
+        `);
+        
+        res.status(200).send(result[0][0]);
     } catch (error : any) {
         res.status(500).send(error.sqlMessage || error.massage);
     }
