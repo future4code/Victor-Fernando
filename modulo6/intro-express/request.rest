@@ -1,0 +1,36 @@
+
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "name": "Vito",
+    "nickName": "vto",
+    "email": "vito@gmail.com"
+}
+
+###
+GET http://localhost:3003/user/1
+
+###
+put http://localhost:3003/user/edit/1
+Content-Type: application/json
+
+{
+    "name": "Vitor"
+}
+
+###
+POST http://localhost:3003/task
+Content-Type: application/json
+
+{
+	"title": "Arrumar casa",
+	"description": "Lavar as loça e o banheiro, passa o pano no chão e arrumar o quarto",
+    "status": "to do",
+	"creatorUserId": 1,
+    "limitDate": "04/05/2022"
+}
+
+###
+GET http://localhost:3003/task/:id
+
