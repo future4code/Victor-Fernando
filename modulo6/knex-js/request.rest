@@ -1,0 +1,10 @@
+
+GET http://localhost:3003/buscar/gender
+Content-Type:  application/json
+
+{
+    "gender": "female"
+}
+
+
+
