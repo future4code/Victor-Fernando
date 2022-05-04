@@ -1,0 +1,21 @@
+GET http://localhost:3003/users
+
+###
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "name": "Teste2",
+    "email": "teste2@gmail.com",
+    "password": "1234"
+} 
+
+###
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+    "name": "Notebook",
+    "price": 1500,
+    "imageUrl": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ"
+}
