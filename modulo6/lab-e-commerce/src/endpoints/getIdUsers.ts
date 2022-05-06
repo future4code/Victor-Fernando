@@ -3,17 +3,19 @@ import connection from "../data/connection";
 import { users } from "../types";
 import { findGetUsers } from "./querys/findGetUsers"
 
-export async function getUsers(
+export async function getIdUsers(
     req: Request,
     res: Response
 ): Promise<void> {
     try{
         
-        const result = await findGetUsers()
+        const idUser = Number(req.params.id)
         
-        const users = result.map(toUsers)
 
-        res.status(200).send(users);
+        const result = await findGetUsers(idUser)
+        
+
+        res.status(200).send(result);
     } catch (error : any){
         res.status(400).send(error.sqMessage || error.message)
     }

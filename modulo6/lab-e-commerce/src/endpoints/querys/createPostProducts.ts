@@ -3,8 +3,8 @@ import { v1 as geraId } from 'uuid';
 
 export async function createPostProducts(name:string, price:string, imageUrl:string ): Promise<void> {
     
-    const result = await connection("labecommerce_users").insert({
-        id: String(geraId),
+    const result = await connection("labecommerce_products").insert({
+        id: String(geraId()),
         name: name,
         price: price,
         image_url: imageUrl
