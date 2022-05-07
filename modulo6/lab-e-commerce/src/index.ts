@@ -11,11 +11,11 @@ import { postPurchases } from "./endpoints/postPurchases"
 app.get("/users", getUsers) 
 
 app.post("/users", postUsers)
-
+ 
 app.get("/users/:id", getIdUsers) 
 
 app.post("/products", postProducts)
 
 app.get("/products", getProducts)
 
-app.get("/purchases", postPurchases)  
+app.post("/purchases", postPurchases)

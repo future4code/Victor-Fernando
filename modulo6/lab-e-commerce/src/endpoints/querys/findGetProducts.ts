@@ -15,6 +15,6 @@ export const findGetProducts = async (id?: Number): Promise<any> => {
     
 
     console.log(users[0])
-    return users[0]  
+    return users[0]
 
 }

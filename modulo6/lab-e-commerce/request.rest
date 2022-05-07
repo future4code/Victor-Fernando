@@ -21,13 +21,13 @@ POST http://localhost:3003/products
 Content-Type: application/json
 
 {
-    "name": "Notebook",
-    "price": 1500,
-    "imageUrl": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ"
+    "name": "Pera fone",
+    "price": 2500,
+    "imageUrl": "https://64.media.tumblr.com/27070187217c500ac60dd34204339e76/tumblr_inline_mgcuuxMcuG1r8bj4b.png"
 }
 
 ###
-GET http://localhost:3003/purchases
+POST http://localhost:3003/purchases
 Content-Type: application/json
 
 {

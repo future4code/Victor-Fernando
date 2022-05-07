@@ -31,24 +31,31 @@ export const createPostPurchases = async (user_id:string , product_id:string ): 
         })  
     } else{
         if(valores[0].total_price === 0 && valores[0].quantity === 0){
+
         somaPreco = somaPreco + Number(preco[0].price)
         somaQuantidade = somaQuantidade + 1
-        } else {
-            somaPreco = Number(valores[0].total_price) + Number(preco[0].price)
-            somaQuantidade = valores[0].quantity + 1
-        }
+        let id_product = [...verificar[0].product_id, product_id]
 
         const result = await connection("labecommerce_purchases").update({
-            user_id: user_id,
-            product_id: product_id,
+            product_id: id_product,
             quantity: somaQuantidade,
             total_price: somaPreco
         }) 
-    }
 
-    
-    
-    
+        } else {
+            somaPreco = Number(valores[0].total_price) + Number(preco[0].price)
+            somaQuantidade = valores[0].quantity + 1
+            let id_product = [...verificar[0].product_id, product_id]
+
+            const result = await connection("labecommerce_purchases").update({
+                product_id: id_product,
+                quantity: somaQuantidade,
+                total_price: somaPreco
+            }) 
+        }
+
+        
+    }
     
     
     console.log(preco[0], valores)
