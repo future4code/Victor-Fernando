@@ -10,7 +10,7 @@ export async function postPurchases(
     try{
         const user_id = req.body.userId
         const product_id = req.body.productId
-        const quantity = 1
+        const quantity = req.body.quantity
 
         if(!user_id || !product_id){
             throw new Error("Não esta passando o id!")
@@ -19,7 +19,8 @@ export async function postPurchases(
 
         const result = createPostPurchases(
             user_id,
-            product_id
+            product_id,
+            quantity
         )
         
         res.status(200).send("Produto criado com sucesso!!");

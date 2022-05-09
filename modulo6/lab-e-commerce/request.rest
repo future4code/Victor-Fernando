@@ -32,5 +32,9 @@ Content-Type: application/json
 
 {
     "userId": "001",
-    "productId": "c296e8a0-cccb-11ec-aeb9-af058412284d"
+    "productId": "c296e8a0-cccb-11ec-aeb9-af058412284d",
+    "quantity": 2
 }
+
+###
+http://localhost:3003/users/001/purchases
