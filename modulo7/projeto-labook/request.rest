@@ -1,0 +1,30 @@
+### Criar Usuário POST 
+POST http://localhost:3003/user/ 
+Content-Type: application/json
+
+{
+    "name": "Victor Fernando dos Santos", 
+    "email": "victorsantos@email.com", 
+    "password": "24651384321"
+}
+
+
+### Pegar todos os usuários. 
+GET http://localhost:3003/user
+
+
+### Criar POST 
+POST http://localhost:3003/post
+Content-Type: application/json
+
+{
+
+    "photo":"t.ly/jkDg", 
+    "description":"Fazendo um post (TESTE)", 
+    "type": "normal",
+    "authorId": "ca43d5e8-1383-44f9-b2cb-eac27a821418"
+}
+
+
+### Pegar Post pelo ID. 
+GET http://localhost:3003/post/ca43d5e8-1383-44f9-b2cb-eac27a821418
