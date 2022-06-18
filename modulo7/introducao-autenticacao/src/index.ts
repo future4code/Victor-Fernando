@@ -37,3 +37,8 @@ const generateToken:any = (input: AuthenticationData): string => {
   type AuthenticationData = {
     id: string;
 }
+
+
+// 3         
+
+//// A) 
