@@ -1,10 +1,12 @@
 import express from 'express'
-import { app } from '../app'
+import { UserController } from '../UserController'
 
 export const userRouter = express.Router()
 
-// const userController = new UserController()
+const userController = new UserController()
 
-app.post('/creat')
+userRouter.post('/signup', userController.signup)
 
-app.get('/all')
+userRouter.post('/login', userController.login)
+
+userRouter.get('/find', userController.getUser)
