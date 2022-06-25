@@ -12,5 +12,20 @@ Content-Type: application/json
 
 {
     "email": "vito2@gmail.com",
-    "password": "123"
+    "password": "123" 
+}
+
+###
+GET http://localhost:3003/user/c13ce5c6-84e9-4b0d-9e06-74559efed7a8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMxM2NlNWM2LTg0ZTktNGIwZC05ZTA2LTc0NTU5ZWZlZDdhOCIsImlhdCI6MTY1NjEyMjY2MCwiZXhwIjoxNjU2MTI0NDYwfQ.trm8LcAfSs_RUwlQ_jGQpwFS9sRlVRNrmfqKXJj5sJs
+
+###
+POST http://localhost:3003/recipe/post/c13ce5c6-84e9-4b0d-9e06-74559efed7a8
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMxM2NlNWM2LTg0ZTktNGIwZC05ZTA2LTc0NTU5ZWZlZDdhOCIsImlhdCI6MTY1NjEyMjY2MCwiZXhwIjoxNjU2MTI0NDYwfQ.trm8LcAfSs_RUwlQ_jGQpwFS9sRlVRNrmfqKXJj5sJs
+
+{
+    "title": "Miojo",
+    "description": "Coloca em uma panela com agua fervendo e espera 5 minutos.",
+    "dataCriacao": "2022-06-24"
 }

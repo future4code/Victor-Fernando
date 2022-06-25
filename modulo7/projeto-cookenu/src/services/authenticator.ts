@@ -8,7 +8,7 @@ export class Authenticator {
     }
 
     public getToken = (token: string) => {
-        const payload = jwt.sign(token, process.env.JWT_KEY as string)
+        const payload = jwt.verify(token, process.env.JWT_KEY as string)
         return payload
     }
 

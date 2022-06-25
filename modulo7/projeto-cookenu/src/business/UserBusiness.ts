@@ -65,9 +65,9 @@ export class UserBusiness {
             const hashedComparison = await hashedPassword.compareHash(password, user.password)
 
             if(!hashedComparison){
-                throw new InvalidEmail()
+                throw new InvalidPassword()
             }
- 
+
             const token = authenticator.generateToken(user.id)
 
             return token
@@ -76,7 +76,7 @@ export class UserBusiness {
         }
     }
 
-    public getUser = async (input: FindUser): Promise<string> => {
+    public getUser = async (input: FindUser): Promise<any> => {
         try{
             let{ id, token } = input
 

@@ -9,4 +9,4 @@ userRouter.post('/signup', userController.signup)
 
 userRouter.post('/login', userController.login)
 
-userRouter.get('/find', userController.getUser)
+userRouter.get('/:id', userController.getUser)

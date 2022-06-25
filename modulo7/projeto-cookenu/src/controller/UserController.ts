@@ -3,7 +3,9 @@ import { UserBusiness } from "../business/UserBusiness";
 import { EditUserInputDTO, LoginInputDTO, UserInputDTO, FindUser } from "../model/user";
 
 const userBusiness = new UserBusiness()
+
 export class UserController{
+
     public signup = async (req: Request, res: Response) => {
         try {
             const input: UserInputDTO = {
@@ -21,7 +23,6 @@ export class UserController{
 
     public login = async (req: Request, res: Response) => {
         try{
-            console.log("login")
             const input: LoginInputDTO ={
                 email: req.body.email,
                 password: req.body.password
@@ -42,9 +43,9 @@ export class UserController{
                 token: req.headers.authorization!
             } 
 
-            const token = await userBusiness.getUser(input)
-            
-            res.status(200).send({token})
+            const user = await userBusiness.getUser(input)
+            console.log(user)
+            res.status(200).send({user})
         } catch (error: any){
             res.status(400).send(error.message)
         }

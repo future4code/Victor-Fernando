@@ -33,8 +33,8 @@ export class UserDatabase extends BaseDatabase {
      public findUser = async(id: string) =>{
         try{
             const result = await UserDatabase.connection(this.TABLE_NAME)
-            .select()
-            .where({id: id})
+            .select("id", "email")
+            .where({id})
             return result[0]
         }catch(error: any) {
             throw new CustomError(400, error.message);
