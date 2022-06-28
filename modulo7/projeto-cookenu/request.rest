@@ -2,7 +2,7 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-    "email": "vito2@gmail.com",
+    "email": "vito4@gmail.com",
     "password": "123"
 }
 
@@ -11,21 +11,34 @@ POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
-    "email": "vito2@gmail.com",
+    "email": "vito3@gmail.com",
     "password": "123" 
 }
-
+ 
 ###
-GET http://localhost:3003/user/c13ce5c6-84e9-4b0d-9e06-74559efed7a8
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMxM2NlNWM2LTg0ZTktNGIwZC05ZTA2LTc0NTU5ZWZlZDdhOCIsImlhdCI6MTY1NjEyMjY2MCwiZXhwIjoxNjU2MTI0NDYwfQ.trm8LcAfSs_RUwlQ_jGQpwFS9sRlVRNrmfqKXJj5sJs
+GET http://localhost:3003/user/2461275c-bc88-49cd-aa7d-a84bd6fed44e
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI0NjEyNzVjLWJjODgtNDljZC1hYTdkLWE4NGJkNmZlZDQ0ZSIsImlhdCI6MTY1NjE5MDc0NiwiZXhwIjoxNjU2MTkyNTQ2fQ.2_BRRRVm8mtACYB2Y-A054s7Qf-CjfWzagZQCMS0PJQ
 
 ###
 POST http://localhost:3003/recipe/post/c13ce5c6-84e9-4b0d-9e06-74559efed7a8
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMxM2NlNWM2LTg0ZTktNGIwZC05ZTA2LTc0NTU5ZWZlZDdhOCIsImlhdCI6MTY1NjEyMjY2MCwiZXhwIjoxNjU2MTI0NDYwfQ.trm8LcAfSs_RUwlQ_jGQpwFS9sRlVRNrmfqKXJj5sJs
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI0NjEyNzVjLWJjODgtNDljZC1hYTdkLWE4NGJkNmZlZDQ0ZSIsImlhdCI6MTY1NjIwMDE0MiwiZXhwIjoxNjU2MjAxOTQyfQ.YDL-P_TruNKNGc3SdvVqvrrVlxh6llTAfUvthimkSDQ
 
 {
-    "title": "Miojo",
-    "description": "Coloca em uma panela com agua fervendo e espera 5 minutos.",
-    "dataCriacao": "2022-06-24"
+    "title": "Miojo4",
+    "description": "Coloca em uma panela com agua fervendo e espera 5 minutos."
 }
+
+### 
+GET http://localhost:3003/recipe/find/2461275c-bc88-49cd-aa7d-a84bd6fed44e
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI0NjEyNzVjLWJjODgtNDljZC1hYTdkLWE4NGJkNmZlZDQ0ZSIsImlhdCI6MTY1NjM3MDY0MiwiZXhwIjoxNjU2MzcyNDQyfQ.c3_xl2Vq7tWEwtFAOceEQqoWfu6rzpax3gi5QLrsCYo
+
+###
+POST http://localhost:3003/follow/2461275c-bc88-49cd-aa7d-a84bd6fed44e
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI0NjEyNzVjLWJjODgtNDljZC1hYTdkLWE4NGJkNmZlZDQ0ZSIsImlhdCI6MTY1NjIwMjUxNCwiZXhwIjoxNjU2MjA0MzE0fQ.nIZmjWcPq_klyxr7jxXCiyPVQDkh-6bbDkKkMKLndSg
+
+{
+    "idSeguido": "be21b0e5-87a8-42f4-b7ce-6a9bfc1f6b74"
+}
+

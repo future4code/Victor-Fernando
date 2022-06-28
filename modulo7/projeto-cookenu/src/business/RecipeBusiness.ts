@@ -1,4 +1,4 @@
-import { InputRecipeDTO, recipe } from "../model/recipe"
+import { InputRecipeDTO, recipe, FindRecipeDTO } from "../model/recipe"
 import { RecipeDatabase } from "../data/RecipeDatabase"
 import { Authenticator } from "../services/authenticator"
 import { generateId } from "../services/idGenerator"
@@ -16,7 +16,6 @@ export class RecipeBusiness {
                 title,
                 description,
                 idUser,
-                dataCriacao,
                 token
             } = input
 
@@ -32,12 +31,30 @@ export class RecipeBusiness {
                 id,
                 title,
                 description,
-                dataCriacao,
+                dataCriacao: data,
                 idUser
             }
 
             await recipeDatabase.insertRecipe(recipe)
 
+        } catch (error: any) {
+            throw new CustomError(400, error.message) 
+        }
+    }
+
+    public getRecipe = async (recipe: FindRecipeDTO) => {
+        try {
+            let{ idUser, token } = recipe
+
+            if(!idUser) {
+                throw new CustomError(400, "O id não esta sendo passado.")
+            }
+
+            const compareToken = authenticator.getToken(token)
+
+            const result = await recipeDatabase.findRecipe(idUser)
+
+            return result
         } catch (error: any) {
             throw new CustomError(400, error.message)
         }

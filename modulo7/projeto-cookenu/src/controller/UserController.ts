@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { UserBusiness } from "../business/UserBusiness";
 import { EditUserInputDTO, LoginInputDTO, UserInputDTO, FindUser } from "../model/user";
 
+
 const userBusiness = new UserBusiness()
 
 export class UserController{
@@ -50,4 +51,6 @@ export class UserController{
             res.status(400).send(error.message)
         }
     }
+
+
 }
