@@ -1,3 +1,5 @@
+"use strict";
+
 // 1
 // function exercicio1(nome:string, data:string) {
 //     const separa = data.split("/")
