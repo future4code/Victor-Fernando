@@ -1,0 +1,27 @@
+### Criar Competição
+POST http://localhost:3003/competicao/create 
+Content-Type: application/json
+
+{
+    "competicao": "Sem metros rasos"
+}
+
+### Inserir dados de um competidor
+POST http://localhost:3003/competidor/insert
+Content-Type: application/json
+
+{
+    "competicao": "Sem metros rasos", 
+    "atleta": "Joao das Neves", 
+    "tempo": 9.234, 
+    "unidade": "s"
+}
+
+
+### Encerrar uma Competição
+POST http://localhost:3003/competicao/encerrar
+Content-Type: application/json
+
+{
+    "name": "100m Rasos"
+}
