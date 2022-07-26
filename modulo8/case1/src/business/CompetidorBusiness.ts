@@ -4,22 +4,22 @@ import { geraId } from '../services/geraId'
 import { BaseError } from "../error/BaseError";
 
 const competidorDatabase = new CompetidorDatabase()
-const id: string = geraId()
+const newId: string = geraId()
 
 export class CompetidorBusiness {
-    public async insert(input: CompetidorInputDTO ):Promise<void> {
+    public async insert(input: CompetidorInputDTO): Promise<void> {
 
         try{
-            const { competicao, atleta, tempo, unidade } = input;
-
-            if (!competicao || !atleta ||  !tempo || !unidade) {
-                throw new Error("Dados inválidos competicao, atleta, tempo, unidade")
+            const { id, competicao, atleta, tempo, unidade } = input;
+            console.log(input)
+            if (!id || !competicao || !atleta ||  !tempo || !unidade) {
+                throw new Error("Dados inválidos id, competicao, atleta, tempo, unidade")
             }
 
             
 
             const competidor: Competidor  = { 
-                id: id, 
+                id: newId, 
                 competicao, 
                 atleta, 
                 tempo, 
@@ -29,12 +29,12 @@ export class CompetidorBusiness {
             const converter = competicao.toLocaleLowerCase().split(" ").join("_")
 
             
-
-            const validar = await competidorDatabase.getCompeticao(competicao)
-            console.log(validar)
+            console.log(id)
+            const validar = await competidorDatabase.getIdCompeticao(id)
+            
 
             
-            if(validar.encerrada === "F"){
+            if(validar[0].encerrada === "F"){
 
                 await competidorDatabase.isertCompetido(competidor, converter)
 

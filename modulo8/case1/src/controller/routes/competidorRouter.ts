@@ -5,5 +5,5 @@ export const competidorRouter = express.Router()
 
 const competidorController = new CompetidorController()
 
-competidorRouter.post("/insert", competidorController.insert)
-// competidorRouter.get("/:id", competidorController.getPostById)
+competidorRouter.post("/insert/:id", competidorController.insert)
+// competidorRouter.get("/:id", competidorController.getIdCompeticao)

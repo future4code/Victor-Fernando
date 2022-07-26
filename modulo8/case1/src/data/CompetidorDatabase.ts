@@ -16,12 +16,11 @@ export class CompetidorDatabase extends BaseDatabase {
     }
   }
 
-  public async getCompeticao(competicao: string): Promise<any> {
+  public async getIdCompeticao(id: string): Promise<any> {
     try{
 
-      const result = await CompetidorDatabase.connection
-      .select(CompetidorDatabase.TABLE_NAME)
-      .where(competicao)
+      const result = await CompetidorDatabase.connection(CompetidorDatabase.TABLE_NAME)
+      .where({id: id});
 
       console.log("data", result)
       return result

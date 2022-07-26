@@ -52,7 +52,30 @@ export class CompeticaoBusiness {
     }
   }
 
+  public async getCompeticao(): Promise<any>{
+    try{
 
+      const result = await competicaoDatabase.getCompeticao()
 
+      return result[0]
+    } catch (error:any) {
+        throw new BaseError(400, error.message);
+    }
+  }
+
+  public async resultCompeticao(input: CompeticaoInputDTO): Promise<any>{
+    try{
+
+      const { competicao } = input
+
+      const converter = competicao.toLocaleLowerCase().split(" ").join("_")
+
+      const result = await competicaoDatabase.resultCompeticao(converter)
+
+      return result
+    } catch (error:any) {
+        throw new BaseError(400, error.message);
+    }
+  }
 
 }

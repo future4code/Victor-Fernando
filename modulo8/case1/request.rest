@@ -6,8 +6,11 @@ Content-Type: application/json
     "competicao": "Sem metros rasos"
 }
 
+### Get competições
+GET http://localhost:3003/competicao/get
+
 ### Inserir dados de um competidor
-POST http://localhost:3003/competidor/insert
+POST http://localhost:3003/competidor/insert/aafb9343-cfc1-4092-9278-715062a5f669
 Content-Type: application/json
 
 {
@@ -24,4 +27,12 @@ Content-Type: application/json
 
 {
     "name": "100m Rasos"
+}
+
+### Resultada da competição
+GET http://localhost:3003/competicao/result
+Content-Type: application/json
+
+{
+    "competicao": "Sem metros rasos"
 }

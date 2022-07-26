@@ -10,4 +10,4 @@ CHANGE encerrada encerrada VARCHAR(2) DEFAULT 'F';
 ALTER TABLE case_competicoes
 CHANGE name competicao VARCHAR(255) NOT NULL;
 
-SELECT * FROM case_competicoes;
+SELECT * FROM sem_metros_rasos;

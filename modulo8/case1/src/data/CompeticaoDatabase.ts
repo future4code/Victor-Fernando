@@ -31,11 +31,12 @@ export class CompeticaoDatabase extends BaseDatabase {
     }
   }
 
-  public async getCompeticao(competicao: string): Promise<void> {
+  public async getCompeticao(): Promise<any> {
     try{
 
-      await CompeticaoDatabase.connection.select(CompeticaoDatabase.TABLE_NAME)
-      .where({name: competicao})
+      const result = await CompeticaoDatabase.connection(CompeticaoDatabase.TABLE_NAME)
+
+      return result
 
     }catch (error:any) {
       throw new Error(error.message) 
@@ -55,10 +56,9 @@ export class CompeticaoDatabase extends BaseDatabase {
 
   public async resultCompeticao (competicao: string): Promise<void> {
     try{
-      await CompeticaoDatabase.connection
-      .select(`${competicao}`)
+      await CompeticaoDatabase.connection(competicao)
       .orderBy("tempo", "desc")
-      .groupBy("atleta")
+      
 
     } catch (error:any) {
       throw new BaseError(400, error.message);

@@ -9,6 +9,7 @@ export type Competidor = {
 
 
 export interface CompetidorInputDTO {
+  id: string
   competicao: string,
   atleta: string,
   tempo: number,
