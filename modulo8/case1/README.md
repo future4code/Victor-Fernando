@@ -1,73 +1,18 @@
-# LABOOK
+Jogos Olímpicos
+Com a chegada dos jogos olímpicos, fomos designados para construir uma API REST (Comitê Olímico Brasileiro).
 
-## Primeiros Passos
+API
+Através da API, deveremos ser capazes de:
 
-* Clonar este repositório
-* Executar `npm install` para adicionar as dependências
-* Criar um arquivo .env na raiz do projeto e preencher as chaves a seguir com os valores apropriados:
-   ```
-   DB_HOST = 
-   DB_USER = 
-   DB_PASSWORD = 
-   DB_SCHEMA = 
- 
-   ```
-* Executar `npm run migrations` para adicionar as tabelas ao banco de dados (em caso de sucesso, o servidor já estará pronto para receber requisições )
+1.Criar uma competição
+2.Cadastrar resultados para uma competição (todos os campos são obrigatórios)
+3.Finalizar uma competição.
+4.Retornar o ranking da competição, exibindo a posição final de cada atleta.(Ainda não faz)
 
-## Endpoints
 
-1. Cadastro
-   * Exemplo de requisição:
-      ```bash
-      curl -i -X POST http://localhost:3003/users/signup -H "Content-Type: application/json" -d '{"name":"Alice","email":"alice@gmail.com","password":"pass123"}'
-      ```
-   * Exemplo de resposta (sucesso):
-      ```bash
-      HTTP/1.1 201 Created
-      X-Powered-By: Express
-      Access-Control-Allow-Origin: *
-      Content-Type: application/json; charset=utf-8
-      Content-Length: 220
-      ETag: W/"dc-ec7r4rkKsMBe/V0SGyUkO6Vyto0"
-      Date: Tue, 17 Nov 2020 14:33:15 GMT
-      Connection: keep-alive
+Link com os comandos para rodar a api:
 
-      {"message":"Success!", "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg5OGJjNDVlLTExZjEtNGEyMy04OTZhLTdmMmUyOWNmZTAxMiIsImlhdCI6MTYwNTYyMzU5NSwiZXhwIjoxNjA1NzA5OTk1fQ.pWxV2vtLnp0hKm0CXXnLpnDu6PEPkZM27A71oTTCYfE"}%   
-      ```
+https://labenu.notion.site/Estruturando-o-backend-semana-31-f029732d989c43e1b40067c23620c973
 
-2. Criar Post
-   * Exemplo de requisição:
-      ```bash
-      curl -i -X POST http://localhost:3003/posts/create -H "Content-Type: application/json" -H "authorization:$token" -d '{"photo":"https://i.picsum.photos/id/238/200/200.jpg?hmac=O4Jc6lqHVfaKVzLf8bWssNTbWzQoaRUC0TDXod9xDdM","description":"My city is beautiful =D","type":"normal"}'
-      ```
-   * Exemplo de resposta (sucesso):
-      ```bash
-      HTTP/1.1 201 Created
-      X-Powered-By: Express
-      Access-Control-Allow-Origin: *
-      Content-Type: application/json; charset=utf-8
-      Content-Length: 22
-      ETag: W/"16-ChcZhlw1slqtGuDwxLsUclql5gE"
-      Date: Tue, 17 Nov 2020 14:47:15 GMT
-      Connection: keep-alive
-
-      {"message":"Success!"}%    
-      ```
-3. Buscar Post por id
-   * Exemplo de requisição:
-      ```bash
-      curl -i http://localhost:3003/posts/$id -H "Content-Type: application/json" -H "authorization:$token" 
-      ```
-   * Exemplo de resposta (sucesso):
-      ```bash
-      HTTP/1.1 200 OK
-      X-Powered-By: Express
-      Access-Control-Allow-Origin: *
-      Content-Type: application/json; charset=utf-8
-      Content-Length: 322
-      ETag: W/"142-IYRwCODXZBltXE3MydHuIDB8M3w"
-      Date: Tue, 17 Nov 2020 14:52:19 GMT
-      Connection: keep-alive
-
-      {"message":"Success!","post":{"id":"e4eb1531-d814-4742-b614-be2a36602548","photo":"https://i.picsum.photos/id/238/200/200.jpg?hmac=O4Jc6lqHVfaKVzLf8bWssNTbWzQoaRUC0TDXod9xDdM","description":"My city is beautiful =D","type":"normal","createdAt":"2020-11-17T17:47:15.000Z","authorId":"898bc45e-11f1-4a23-896a-7f2e29cfe012"}}% 
-      ```
+Documentação postman
+https://documenter.getpostman.com/view/18694794/UzXLzJKh
