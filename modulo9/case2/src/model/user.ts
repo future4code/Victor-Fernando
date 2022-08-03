@@ -1,10 +1,12 @@
 export type user = {
     id: string;
+    nome: string;
     email: string;
     password: string;
 };
 
 export interface UserInputDTO {
+    nome: string;
     email: string;
     password: string
 }
