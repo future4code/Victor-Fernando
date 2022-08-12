@@ -1,14 +1,18 @@
 import styled from "styled-components";
 
 export const CardList = styled.div`
-    height: 15vh;
-    width: 310px;
+    height: 18vh;
+    width: 420px;
     margin: 10px;
     display: flex;
-    padding: 18px;
+    justify-content: space-around;
     align-items: center;
     margin-bottom: 18px;
     box-shadow: 2px 2px 2px 2px rgba(50, 50, 50, 0.77);
+
+    .Descricao{
+        margin-left: 14px;
+    }
 `
 
 export const GlobalCard = styled.div`
@@ -21,10 +25,24 @@ export const GlobalCard = styled.div`
 export const SaborPreco = styled.div`
     display: flex;
     align-items: center;
-    margin-bottom: 18px;
+    justify-content: flex-start;
+    /* margin-bottom: 18px; */
 
     p{
         margin-right: 14px;
     }
 `
+
+export const BotaoAdiciona = styled.button`
+    margin-top: 14px;
+
+`
+
+export const IntCard = styled.div`
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    margin-right: 2px;
+`
+
 
