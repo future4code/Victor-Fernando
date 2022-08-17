@@ -1,0 +1,6 @@
+GET https://pizzaria-ambulnz.herokuapp.com/api/pizzas
+
+
+###
+GET https://pizzaria-ambulnz.herokuapp.com/api/orders
+
