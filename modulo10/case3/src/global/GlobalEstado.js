@@ -7,12 +7,16 @@ const GlobalState = (props) => {
     
   const [listaLoterias, setListaLoterias] = useState([]);
   const [idLoteria, setIdLoteria] = useState([]);
+  const [concursos, setConcursos] = useState([]);
+  const [numLoteria, setNumLoteria] = useState([]);
+  const [corFundo, setCorFundo] = useState([]);
+  const [sorteio, setSorteio] = useState([]);
 
   const pegaLoterias = () => {
 
       axios
       .get(`${BASE_URL}/loterias`)
-      .then(res => setListaPokemon(res.data))
+      .then(res => setListaLoterias(res.data))
       .catch(err => alert(err.message))
   }
   
@@ -20,34 +24,58 @@ const GlobalState = (props) => {
   useEffect(() =>{
 
     pegaLoterias();
-    
+    // idLoteria([]); 
+    console.log("loterias", listaLoterias)
       
   },[])
 
-  // useEffect(() =>{
+  
 
-  //   const novaLista = []
-  //   for (let item of listaPokemon){
-  //       axios
-  //       .get(`${item.url}`) 
-  //       .then((res) => {
-  //           novaLista.push(res.data);
-  //           if(novaLista.length === 20){
-  //               const ordenarLista = novaLista.sort((a, b) => {
-  //                   return a.id - b.id;
-  //                 });  
-  //               setPokemons(ordenarLista);
-  //           }
-            
-  //       })  
-  //       .catch(err => alert(err.message))
-        
-  //   }
-
-      
-  // },[listaPokemon])
+  useEffect(() =>{
+    
+    axios
+    .get(`${BASE_URL}/loterias-concursos`) 
+    .then((res) => {
+        setConcursos(res.data);
+    })  
+    .catch(err => alert(err.message))
+    console.log("idLoterias", concursos)
 
     
+      
+  },[idLoteria])
+
+  const filterConcurso = () => {
+    const getId = concursos?.find((item)=> {
+        return item.loteriaId == idLoteria
+        
+    })
+    
+    setNumLoteria(getId)
+    console.log("iiii", getId)
+    
+  }
+  useEffect(() => {
+      filterConcurso() 
+      
+  },[concursos]);
+
+  useEffect(() => {
+    axios
+    .get(`${BASE_URL}/concursos/${numLoteria?.concursoId}`)
+    .then((res) => {
+      setSorteio(res.data);
+      console.log("ssss", sorteio)
+    })  
+    .catch(err => alert(err.message))
+    
+    
+  },[numLoteria]);
+
+  
+
+  
+
 
     // console.log("lista pokemon", listaPokemon)
     // console.log(pokemons)
@@ -56,7 +84,13 @@ const GlobalState = (props) => {
       listaLoterias,
       setListaLoterias,
       idLoteria,
-      setIdLoteria
+      setIdLoteria,
+      numLoteria,
+      setNumLoteria,
+      corFundo, 
+      setCorFundo,
+      sorteio
+
     };
   
     return (

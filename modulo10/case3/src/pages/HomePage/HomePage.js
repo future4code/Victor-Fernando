@@ -1,80 +1,63 @@
-import React, { useContext } from "react";
-import { 
-    CardList,
-    Botoes,
-    ImgContainer,
-    Img,
-    ContainerLista,
-    Header,
-    BotaoHeader
-} from "../../constants/styledPokemosList";
+import React, { useContext, useEffect} from "react";
+import { Selecao, Sorteio, Global } from "./styledHome";
 import GlobalEstadoContext from "../../global/GlobalEstadoContext";
 import { useHistory } from "react-router-dom";
-import  logoPokemon  from  "../../images/logoPokemon.png";
+import { LoteriaId } from "../../constants/loterias/LoteriaId"
 
+const cores = [
+    { id: 0, cor: "corFundoMega", nome: "Mega-Sena"},
+    { id: 1, cor: "corFundoQuina", nome: "Quina"},
+    { id: 2, cor: "corFundoLotoFacil", nome: "Lotofácio"},
+    { id: 3, cor: "corFundoLotoMania", nome: "Lotomania"},
+    { id: 4, cor: "corFundoTimeMania", nome: "Timemania"},
+    { id: 5, cor: "corFundoSorte", nome: "Dia de Sorte"},
+  ];
 
 const HomePage = () => {
 
-    const { pokemons, setPokemons, pokedex, setPokedex, setPokeDetails } = useContext( GlobalEstadoContext );
+    const { idLoteria, corFundo, setCorFundo, sorteio} = useContext( GlobalEstadoContext );
 
-    const history = useHistory();
-
-    const goPokedex = () => {
-        history.push(`/pokedex`)
+    const fundo = () =>{
+        const cor = cores.find((item) => item.id == idLoteria)
+        console.log("cor", cor)
+        setCorFundo(cor)
     }
 
-    const goDetails = (pokeName) => {
-        history.push("/details")
-
-        const filtraPokelista = pokemons.find((item)=> item.name === pokeName )
-        setPokeDetails(filtraPokelista)
-
-    }
-
-    const addPokedex = (pokeName) => {
-
-        const filtraPokelista = pokemons.find((item)=> item.name === pokeName )
-
-        const novoPokedex = [...pokedex, filtraPokelista]
-        const orderedPokedex = novoPokedex.sort((a, b) => {
-            return a.id - b.id;
-          });
-        setPokedex(orderedPokedex)
-
-        const atualizarPokemons = pokemons.filter((item)=> item.name !== pokeName )
-        setPokemons(atualizarPokemons)
-    }
-
-
-    const mapearPokemons = pokemons.length && pokemons.map((pokemon)=>{
-
-        return(
-            <>
-                {pokemon?.sprites && <CardList key={pokemon.species.name}>
-                    <ImgContainer>
-                        <Img src={pokemon.sprites.front_default} alt={pokemon.species.name}/>
-                    </ImgContainer>
-                    <Botoes>
-                        <button onClick={()=> addPokedex(pokemon.name)} > Adicionar a Pokédex </button>
-                        <button onClick={()=> goDetails(pokemon.name)}> Ver detalhes </button>
-                    </Botoes>
-                </CardList>}
-            </>
-        )
-    })
+    useEffect(() => {
+        fundo()   
+        
+    },[idLoteria]);
 
     return(
-        <>
-            <Header>
-                <BotaoHeader onClick={()=> goPokedex()}>Ir para poédex</BotaoHeader>
-                <img src={logoPokemon} width={160}/>
-            </Header>
-            <ContainerLista>
-
-                {mapearPokemons}
-
-            </ContainerLista>
-        </>
+        <Global>
+            <div className={idLoteria == "" ? "corFundoPadrao" : corFundo?.cor}>
+                <Selecao>
+                    <LoteriaId/>
+                    <p>{corFundo.nome}</p>
+                    <p>ss</p>
+                </Selecao>
+            
+                <Sorteio>
+                    <div className="radius"/>
+                    <div className="container">
+                        <div className="containerNum">
+                            {sorteio.numeros?.map((num) => {
+                                return (
+                                    <div className="numeros">
+                                        <p>{idLoteria == "" ? "00" : num}</p>
+                                    </div> 
+                                )
+                            })}
+                        </div>
+                        <div className="P">
+                            <p>Este sorteio é meramente ilustrativo e não possui nenhuma ligação com a CAIXA.</p>
+                        </div>
+                        
+                    </div>
+                    
+                </Sorteio>
+            </div>
+        </Global>
     );
     
 } 

@@ -1,17 +1,22 @@
 import React, { useEffect, useContext } from "react"
 import GlobalEstadoContext from "../../global/GlobalEstadoContext";
+import { Select } from "./styledLoteriaId"
 
 
 
-const LoteriaId = () => {
-    const { listaLoterias, setIdLoteria } = useContext(GlobalEstadoContext)
+export const LoteriaId = () => {
+    const { listaLoterias, setIdLoteria, idLoteria, concursos, numLoteria, setNumLoteria } = useContext(GlobalEstadoContext)
 
     const getId = (e) => {
         setIdLoteria(e.target.value);
     }
 
+
+    
+
+
     return(
-        <select className="" onChange={getId}>
+        <Select onChange={getId}>
             <option value={""}></option>
             {listaLoterias.map((loteria) => {
             return (
@@ -20,9 +25,7 @@ const LoteriaId = () => {
                 </option>
                 );
             })}
-        </select>
+        </Select>
         
     )
 }
-
-export default LoteriaId;
