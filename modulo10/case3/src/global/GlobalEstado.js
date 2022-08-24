@@ -11,6 +11,7 @@ const GlobalState = (props) => {
   const [numLoteria, setNumLoteria] = useState([]);
   const [corFundo, setCorFundo] = useState([]);
   const [sorteio, setSorteio] = useState([]);
+  const [formatdata, setFormatdata] = useState([]);
 
   const pegaLoterias = () => {
 
@@ -68,6 +69,9 @@ const GlobalState = (props) => {
       console.log("ssss", sorteio)
     })  
     .catch(err => alert(err.message))
+
+    const result = sorteio.data.substring(10, 0)   
+    setFormatdata(result.split("-").reverse().join("/"))
     
     
   },[numLoteria]);
@@ -89,7 +93,9 @@ const GlobalState = (props) => {
       setNumLoteria,
       corFundo, 
       setCorFundo,
-      sorteio
+      sorteio,
+      setFormatdata,
+      formatdata
 
     };
   

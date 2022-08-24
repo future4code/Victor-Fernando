@@ -3,10 +3,19 @@ import styled from "styled-components"
 export const Selecao = styled.div`
     height: 100%;
     width: 30vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: 1fr 2fr 2fr;
+    justify-content: center;
     align-items: center;
+
+    .data{
+        justify-self: center;
+    }
+
+    .select{
+        justify-self: center;
+    }
+
 `
 
 export const Sorteio = styled.div`
@@ -28,24 +37,20 @@ export const Sorteio = styled.div`
         background-color: #efefef;
         height: 100%;
         width: 90%;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-rows: 1fr 8vh;
         justify-content: center;
+        align-items: center;
 
         .P{
-            
+            align-self: flex-end;
         }
 
         .containerNum{
             display: flex;
             flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            /* margin: 36vh 0 30vh 3vw; */
-            /* margin-bottom: 30vh; */
             flex-wrap: wrap;
             width: 60%;
-            /* height: 10vw; */
 
             .numeros{
                 background-color: white;

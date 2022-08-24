@@ -13,28 +13,41 @@ const cores = [
     { id: 5, cor: "corFundoSorte", nome: "Dia de Sorte"},
   ];
 
+
+
 const HomePage = () => {
 
-    const { idLoteria, corFundo, setCorFundo, sorteio} = useContext( GlobalEstadoContext );
+    const { idLoteria, corFundo, setCorFundo, sorteio, formatdata, setFormatdata} = useContext( GlobalEstadoContext );
 
     const fundo = () =>{
         const cor = cores.find((item) => item.id == idLoteria)
         console.log("cor", cor)
         setCorFundo(cor)
+
+        
     }
 
+
     useEffect(() => {
-        fundo()   
+        fundo()
         
     },[idLoteria]);
+
+    
 
     return(
         <Global>
             <div className={idLoteria == "" ? "corFundoPadrao" : corFundo?.cor}>
                 <Selecao>
-                    <LoteriaId/>
-                    <p>{corFundo.nome}</p>
-                    <p>ss</p>
+                    <div className="select">
+                        <LoteriaId />
+                    </div>
+                    
+                    <h1 >{corFundo.nome}</h1>
+                    <div className="data">
+                       <p>Concursos</p> 
+                       {idLoteria == "" ? <></> : <p>{sorteio?.id}-{formatdata}</p>}
+                    </div>
                 </Selecao>
             
                 <Sorteio>
