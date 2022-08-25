@@ -70,14 +70,17 @@ const GlobalState = (props) => {
     })  
     .catch(err => alert(err.message))
 
-    const result = sorteio.data.substring(10, 0)   
-    setFormatdata(result.split("-").reverse().join("/"))
+    // const result = sorteio.data.substring(10, 0)   
+    // setFormatdata(result.split("-").reverse().join("/"))
     
     
   },[numLoteria]);
 
   
-
+  useEffect (() => {
+    // const result = sorteio.data.substring(10, 0)   
+    // setFormatdata(result.split("-").reverse().join("/"))
+  },[])
   
 
 

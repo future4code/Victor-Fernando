@@ -44,9 +44,12 @@ const HomePage = () => {
                     </div>
                     
                     <h1 >{corFundo.nome}</h1>
-                    <div className="data">
+                    <div className="data1">
                        <p>Concursos</p> 
                        {idLoteria == "" ? <></> : <p>{sorteio?.id}-{formatdata}</p>}
+                    </div>
+                    <div className="data2">
+                        <p>Concursos {idLoteria == "" ? "" : sorteio?.id}</p>
                     </div>
                 </Selecao>
             
