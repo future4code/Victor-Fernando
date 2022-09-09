@@ -9,7 +9,7 @@ import { CardFilme, GlobalFilme } from "./stayledFilme";
 export const Filmes = () => {
     const { listaFilmes, setListaFilmes, filmeDetalhe, setFilmeDetalhe } = useContext(GlobalEstadoContext);
 
-    const history = useHistory();
+    const history = useHistory(); 
 
     const goDetale = (idFilme) => {
         history.push("/detalhe")
